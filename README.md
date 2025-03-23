@@ -39,8 +39,8 @@ The script auto-installs these if missing:
 - `sha256sum`
 
 ## Usage
-1. 1. **Download the Script**:
-   Clone this repo or download `flash_lineageos.sh` from the [Releases](#releases) section.
+1. **Download the Script**:
+   - Clone this repo or download `flash_lineageos.sh` from the [Releases page](https://github.com/sthetix/NX-LOS-eMMC-Flasher/releases).
    ```bash
    git clone https://github.com/sthetix/NX-LOS-eMMC-Flasher.git
    cd NX-LOS-eMMC-Flasher
