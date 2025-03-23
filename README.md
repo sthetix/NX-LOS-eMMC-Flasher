@@ -39,11 +39,11 @@ The script auto-installs these if missing:
 - `sha256sum`
 
 ## Usage
-1. **Download the Script**:
-   - Clone this repo or download `flash_lineageos.sh` from the [Releases](#releases) section.
+1. 1. **Download the Script**:
+   Clone this repo or download `flash_lineageos.sh` from the [Releases](#releases) section.
    ```bash
-   git clone https://github.com/yourusername/lineageos-switch-flash.git
-   cd lineageos-switch-flash
+   git clone https://github.com/sthetix/NX-LOS-eMMC-Flasher.git
+   cd NX-LOS-eMMC-Flasher
    ```
 2. **Make it Executable**:
    Important: You must set execute permissions before running the script.
