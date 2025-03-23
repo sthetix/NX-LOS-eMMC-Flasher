@@ -6,9 +6,15 @@
   </a>
 </div>
 
-A shell script to automate downloading and flashing the latest **LineageOS** and **MindTheGapps (ARM64)** to your Nintendo Switch’s eMMC. Developed by **sthetix**, this script runs on Linux, wipes the eMMC, repartitions it, and sets up everything you need to boot LineageOS.
+A shell script to automate downloading and flashing the latest **LineageOS** and **MindTheGapps (ARM64)** to your Nintendo Switch’s eMMC. This script runs on Linux terminal, wipes the eMMC, repartitions it, and sets up everything you need to boot LineageOS.
 
 ---
+
+![Warning](https://img.shields.io/badge/⚠️-WARNING-red)  
+**⚠️ THIS SCRIPT WILL WIPE YOUR ENTIRE EMMC! ⚠️**  
+**PLEASE BACK UP YOUR NAND BEFORE PROCEEDING!**  
+If you do not back up your NAND, you will **lose access to the Nintendo Switch Horizon OS (HOS)** and will **not be able to restore it** without a backup.  
+Use this script **AT YOUR OWN RISK**. We are not responsible for any data loss or damage to your device.
 
 ## Features
 - Downloads the latest LineageOS build for Switch (Tablet or TV variant).
