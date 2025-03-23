@@ -1,6 +1,10 @@
 # LineageOS eMMC Flash Script for Nintendo Switch
 
-![LineageOS Logo](https://lineageos.org/images/logo.png)
+<div align="center">
+  <a href="https://github.com/sthetix/NX-LOS-eMMC-Flasher">
+    <img src="https://github.com/sthetix/NX-LOS-eMMC-Flasher/blob/main/title.png" alt="NX-LOS-eMMC-Flasher Logo" width="50%">
+  </a>
+</div>
 
 A shell script to automate downloading and flashing the latest **LineageOS** and **MindTheGapps (ARM64)** to your Nintendo Switch’s eMMC. Developed by **sthetix**, this script runs on Linux, wipes the eMMC, repartitions it, and sets up everything you need to boot LineageOS.
 
