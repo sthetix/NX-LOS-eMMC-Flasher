@@ -1,0 +1,100 @@
+# LineageOS eMMC Flash Script for Nintendo Switch
+
+![LineageOS Logo](https://lineageos.org/images/logo.png)
+
+A shell script to automate downloading and flashing the latest **LineageOS** and **MindTheGapps (ARM64)** to your Nintendo Switch’s eMMC. Developed by **sthetix**, this script runs on Linux, wipes the eMMC, repartitions it, and sets up everything you need to boot LineageOS.
+
+---
+
+## Features
+- Downloads the latest LineageOS build for Switch (Tablet or TV variant).
+- Optionally fetches the matching MindTheGapps ARM64 package.
+- Copies files to an SD card via Hekate UMS.
+- Wipes, repartitions, and flashes the eMMC with a custom partition layout.
+- Simple CLI interface with a spinner for background tasks.
+
+## Requirements
+- **Linux environment** (e.g., Ubuntu in VMware).
+- **Hekate** installed on your Switch (for USB Mass Storage mode).
+- **SD card** (FAT32 formatted).
+- **Internet connection**.
+- Root privileges (`sudo`).
+
+## Dependencies
+The script auto-installs these if missing:
+- `curl`
+- `jq`
+- `sgdisk`
+- `parted`
+- `sha256sum`
+
+## Usage
+1. **Download the Script**:
+   - Clone this repo or download `flash_lineageos.sh` from the [Releases](#releases) section.
+   ```bash
+   git clone https://github.com/yourusername/lineageos-switch-flash.git
+   cd lineageos-switch-flash
+   ```
+2. **Make it Executable**:
+   Important: You must set execute permissions before running the script.
+   ```bash
+   chmod +x flash_lineageos.sh
+   ```
+3. **Run the Script**:
+   ```bash
+   ./flash_lineageos.sh
+   ```
+4. **Follow Prompts**:
+   - Choose Tablet (1) or TV (2) variant.
+   - Decide if you want MindTheGapps (ARM64) (y/N).
+   - Mount your SD card and eMMC via Hekate UMS when prompted.
+   - Confirm eMMC wipe and flash.
+
+## Post-Flash
+- Unplug USB, return to Hekate Home.
+- Go to More Configs, select Android while holding Volume Up.
+- Perform a Factory Reset, Format Data, then Apply Update from the SD card to flash the ZIPs.
+
+## Script Flow
+- **Step 1: Selection**  
+  Pick your device type and MindTheGapps option.
+  
+- **Step 2: Downloads**  
+  Fetches LineageOS files with SHA256 verification.
+  
+- **Step 3: SD Card Prep**  
+  Copies files to SD card via Hekate UMS.
+  
+- **Step 4: eMMC Mount**  
+  Unmounts SD, mounts eMMC via Hekate UMS.
+  
+- **Step 5: Flash eMMC**  
+  Wipes, repartitions, and flashes eMMC.
+  
+- **Step 6: Cleanup**  
+  Option to delete or keep temp files.
+
+## Partition Layout
+| Partition | Start   | End     | Purpose            |
+|-----------|---------|---------|--------------------|
+| boot      | 1 MiB   | 65 MiB  | Bootloader         |
+| recovery   | 65 MiB  | 129 MiB | Recovery           |
+| dtb       | 129 MiB | 130 MiB | Device Tree        |
+| misc      | 130 MiB | 133 MiB | Misc Data          |
+| cache     | 133 MiB | 193 MiB | Cache              |
+| super     | 193 MiB | 6115 MiB| System+Vendor      |
+| userdata  | 6115 MiB| 100%    | User Data          |
+
+> `userdata` is formatted as ext4.
+
+## Troubleshooting
+- **Permission Denied**: Ensure you ran `chmod +x flash_lineageos.sh` before executing.
+- **API Errors**: Check internet or LineageOS/MindTheGapps servers.
+- **Mount Issues**: Ensure Hekate UMS is active and USB is passed through in VMware.
+- **File Missing**: Verify downloads completed (check `/tmp/lineageos_temp`).
+
+## Contributing
+Feel free to fork, tweak, and submit pull requests! Report bugs or suggest features via Issues.
+
+## License
+This project is under the MIT License (LICENSE).
