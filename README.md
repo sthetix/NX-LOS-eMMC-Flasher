@@ -1,4 +1,4 @@
-# LineageOS eMMC Flash Script for Nintendo Switch
+# NX LineageOS eMMC Flasher
 
 <div align="center">
   <a href="https://github.com/sthetix/NX-LOS-eMMC-Flasher">
