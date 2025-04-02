@@ -1,4 +1,4 @@
-# NX LineageOS eMMC Flasher
+# Switchroot-LineageOS-eMMC-Flasher
 
 <div align="center">
   <a href="https://github.com/sthetix/NX-LOS-eMMC-Flasher">
